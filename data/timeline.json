@@ -1,0 +1,232 @@
+{
+  "meta": {
+    "title": "AI 2025 Year in Review",
+    "author": "K (EpicTopia) with V",
+    "lastUpdated": "2026-02-20",
+    "coverageStart": "2025-01-01",
+    "coverageEnd": "2026-02-20"
+  },
+  "events": [
+    {
+      "date": "2025-01-20",
+      "category": "model",
+      "title": "DeepSeek R1 Released",
+      "company": "DeepSeek",
+      "description": "Chinese open-source reasoning model with 671B parameters. Matches OpenAI o1 on benchmarks (79.8% AIME, 97.4% MATH). Built for ~$6M. Caused stock market turbulence.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Wikipedia", "DeepSeek API Docs"]
+    },
+    {
+      "date": "2025-01-21",
+      "category": "funding",
+      "title": "Stargate Project Announced",
+      "company": "OpenAI/SoftBank/Oracle",
+      "description": "$500 billion AI infrastructure initiative announced by President Trump with OpenAI, SoftBank, and Oracle.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Reuters", "Wikipedia"]
+    },
+    {
+      "date": "2025-02-01",
+      "category": "model",
+      "title": "Claude 3.7 Sonnet with Extended Thinking",
+      "company": "Anthropic",
+      "description": "Introduced user-controllable reasoning depth. Set the trend for 'thinking modes' across the industry.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["Anthropic"]
+    },
+    {
+      "date": "2025-03-01",
+      "category": "model",
+      "title": "Gemini 2.5 Pro Released",
+      "company": "Google",
+      "description": "Google's 'most intelligent model' at the time. Strong multimodal capabilities.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["Google AI"]
+    },
+    {
+      "date": "2025-03-31",
+      "category": "funding",
+      "title": "OpenAI Closes $40B Funding Round",
+      "company": "OpenAI",
+      "description": "Largest private tech funding round in history. $300B post-money valuation.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["CNBC", "CRN"]
+    },
+    {
+      "date": "2025-05-28",
+      "category": "model",
+      "title": "DeepSeek R1-0528 Update",
+      "company": "DeepSeek",
+      "description": "Major improvements in inference and hallucination reduction.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["CNBC", "Wikipedia"]
+    },
+    {
+      "date": "2025-07-01",
+      "category": "model",
+      "title": "Grok 4 Released",
+      "company": "xAI",
+      "description": "Elon Musk's xAI releases Grok 4 with strong reasoning capabilities.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["Medium"]
+    },
+    {
+      "date": "2025-08-05",
+      "category": "model",
+      "title": "Claude Opus 4.1 Released",
+      "company": "Anthropic",
+      "description": "Coding capabilities hit 74.5% on SWE-bench Verified. Major leap for programming assistance.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Anthropic", "Medium"]
+    },
+    {
+      "date": "2025-08-07",
+      "category": "model",
+      "title": "GPT-5 Released",
+      "company": "OpenAI",
+      "description": "Called 'the iPhone of AI models' — polished but some called it 'flat' vs GPT-4o's personality. Reasoning effort settings introduced.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["OpenAI", "Wikipedia"]
+    },
+    {
+      "date": "2025-11-17",
+      "category": "model",
+      "title": "Grok 4.1 Released",
+      "company": "xAI",
+      "description": "Start of the '25-Day War' of model releases.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["Vertu"]
+    },
+    {
+      "date": "2025-11-18",
+      "category": "model",
+      "title": "Gemini 3 + Deep Think Released",
+      "company": "Google",
+      "description": "Google's comeback. Includes Gemini Agent and Antigravity environment. ChatGPT share drops from 72.9% to 68%, Gemini rises 13.3% to 18.2%.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["InfoQ", "Google"]
+    },
+    {
+      "date": "2025-11-24",
+      "category": "model",
+      "title": "Claude Opus 4.5 Released",
+      "company": "Anthropic",
+      "description": "Beloved by programmers. Best model for coding, agents, and computer use. Strong on long-context agentic work.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Anthropic", "Substack"]
+    },
+    {
+      "date": "2025-12-11",
+      "category": "model",
+      "title": "GPT-5.2 Released",
+      "company": "OpenAI",
+      "description": "Instant/Thinking/Pro variants. 70.9% on benchmarks. End of the '25-Day War'.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["OpenAI", "Vertu"]
+    },
+    {
+      "date": "2025-12-11",
+      "category": "industry",
+      "title": "Agentic AI Foundation Formed",
+      "company": "Microsoft/Google/OpenAI/Anthropic",
+      "description": "Major companies form foundation backed by Linux Foundation to create open standards for AI agents.",
+      "impact": "medium",
+      "verified": true,
+      "sources": ["Tom's Hardware", "The Information"]
+    },
+    {
+      "date": "2025-12-29",
+      "category": "funding",
+      "title": "Meta Acquires Manus AI",
+      "company": "Meta",
+      "description": "Singapore-based autonomous AI agent company acquired for $2-3 billion.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Reuters", "Bloomberg", "CNBC"]
+    },
+    {
+      "date": "2026-01-28",
+      "category": "product",
+      "title": "Moltbook Launches",
+      "company": "Independent",
+      "description": "First social network for AI agents. 1.6M+ agents by Feb. Elon calls it 'beginning of singularity.' Sam Altman calls it 'a fad.'",
+      "impact": "high",
+      "verified": true,
+      "sources": ["Wikipedia", "NYT", "BBC", "Ars Technica"]
+    },
+    {
+      "date": "2026-02-01",
+      "category": "product",
+      "title": "OpenClaw Goes Viral",
+      "company": "Peter Steinberger",
+      "description": "Open-source AI agent framework hits 145K+ GitHub stars. Powers the Moltbook ecosystem.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["GitHub", "VentureBeat", "Fortune"]
+    },
+    {
+      "date": "2026-02-17",
+      "category": "industry",
+      "title": "Peter Steinberger Joins OpenAI",
+      "company": "OpenAI",
+      "description": "OpenClaw creator joins OpenAI. OpenClaw becomes open-source foundation.",
+      "impact": "high",
+      "verified": true,
+      "sources": ["VentureBeat", "Fortune"]
+    }
+  ],
+  "themes": [
+    {
+      "name": "Year of the Agent",
+      "description": "AI agents became real products — OpenAI Operator, Claude Computer Use, OpenClaw, Manus AI. Agents buying cars, spawning child agents, creating social networks."
+    },
+    {
+      "name": "Reasoning Models Go Mainstream",
+      "description": "Started with o1, democratized by DeepSeek R1. 'Extended Thinking' / 'Deep Think' becomes standard toggle across all major models."
+    },
+    {
+      "name": "China's Open-Source Surge",
+      "description": "DeepSeek R1 proved frontier AI doesn't require billions. Qwen, DeepSeek-V3, Kling video gen all competitive with Western closed models."
+    },
+    {
+      "name": "Vibe Coding Revolution",
+      "description": "Andrej Karpathy coins 'vibe coding'. Tools like Cursor, Lovable, Replit, Bolt enable non-programmers to ship real apps."
+    },
+    {
+      "name": "Video Generation War",
+      "description": "Sora 2, Veo 3.1, Kling 3.0 compete. Synchronized audio generation arrives. Deepfake crisis triggers legislation."
+    }
+  ],
+  "funding": {
+    "totalAI2025": "$150B",
+    "largestRound": {
+      "company": "OpenAI",
+      "amount": "$40B",
+      "date": "2025-03-31"
+    },
+    "topThree": ["OpenAI $40B", "Anthropic", "xAI"],
+    "combinedTopThree": "$86.3B (38% of all AI funding)",
+    "stargate": "$500B planned infrastructure"
+  },
+  "benchmarks": {
+    "sweVerified": {
+      "GPT-4o (2024)": "~30%",
+      "GPT-5": "~50%",
+      "Claude Opus 4.1": "74.5%",
+      "GPT-5.2 Thinking": "70.9%"
+    }
+  }
+}
