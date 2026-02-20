@@ -6,9 +6,9 @@
   <title>AI 2025 Year in Review | AI 2025年度回顾</title>
   <style>
     :root {
-      --bg: #0f0f0f;
-      --bg-card: #1a1a1a;
-      --bg-elevated: #252525;
+      --bg: #0a0a0a;
+      --bg-card: #141414;
+      --bg-elevated: #1f1f1f;
       --text: #ffffff;
       --text-dim: #888;
       --accent: #6366f1;
@@ -28,16 +28,16 @@
       font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', sans-serif;
       background: var(--bg);
       color: var(--text);
-      line-height: 1.5;
+      line-height: 1.6;
     }
     
-    .container { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
     
     /* Language Toggle */
     .lang-toggle {
       position: fixed;
-      top: 20px;
-      right: 20px;
+      top: 16px;
+      right: 16px;
       z-index: 100;
       display: flex;
       background: var(--bg-card);
@@ -46,12 +46,13 @@
       border: 1px solid #333;
     }
     .lang-btn {
-      padding: 8px 16px;
+      padding: 8px 14px;
       background: transparent;
       border: none;
       color: var(--text-dim);
       cursor: pointer;
-      font-size: 14px;
+      font-size: 13px;
+      font-weight: 500;
       transition: all 0.2s;
     }
     .lang-btn.active {
@@ -60,140 +61,132 @@
     }
     .lang-btn:hover:not(.active) { background: var(--bg-elevated); }
     
-    /* Hide language content */
     [data-lang="cn"] { display: none; }
     body.cn [data-lang="en"] { display: none; }
     body.cn [data-lang="cn"] { display: block; }
+    body.cn [data-lang="cn"].inline { display: inline; }
     
     /* Hero */
     .hero {
-      padding: 80px 0 60px;
+      padding: 80px 0 40px;
       text-align: center;
-      background: linear-gradient(180deg, rgba(99,102,241,0.15) 0%, transparent 100%);
+      background: radial-gradient(ellipse at top, rgba(99,102,241,0.15) 0%, transparent 70%);
     }
     .hero-badge {
       display: inline-block;
       padding: 6px 16px;
-      background: rgba(99,102,241,0.2);
+      background: rgba(99,102,241,0.15);
+      border: 1px solid rgba(99,102,241,0.3);
       border-radius: 20px;
-      font-size: 13px;
+      font-size: 12px;
+      font-weight: 600;
       color: var(--accent);
       margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
     .hero h1 {
       font-size: clamp(2.5rem, 6vw, 4rem);
       font-weight: 800;
-      letter-spacing: -0.02em;
+      letter-spacing: -0.03em;
       margin-bottom: 16px;
     }
     .hero h1 span { 
-      background: linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899);
+      background: linear-gradient(135deg, #6366f1, #a855f7, #ec4899);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
     }
-    .hero p { font-size: 1.25rem; color: var(--text-dim); }
+    .hero .subtitle { font-size: 1.2rem; color: var(--text-dim); max-width: 700px; margin: 0 auto; }
     
-    /* Big Stats Row */
+    /* Big Stats */
     .big-stats {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 12px;
       padding: 40px 0;
     }
     .big-stat {
       background: var(--bg-card);
-      border-radius: 16px;
-      padding: 24px;
+      border-radius: 12px;
+      padding: 20px 16px;
       text-align: center;
       border: 1px solid #222;
     }
-    .big-stat .icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin: 0 auto 12px;
-    }
     .big-stat .number {
-      font-size: 2rem;
+      font-size: 1.75rem;
       font-weight: 700;
       margin-bottom: 4px;
     }
-    .big-stat .label { font-size: 13px; color: var(--text-dim); }
+    .big-stat .label { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.5px; }
     
     /* Section */
-    section { padding: 60px 0; }
+    section { padding: 50px 0; }
     .section-header {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-    .section-header .icon {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 20px;
+      margin-bottom: 24px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid #222;
     }
     .section-header h2 {
-      font-size: 1.75rem;
+      font-size: 1.5rem;
       font-weight: 700;
+      display: flex;
+      align-items: center;
+      gap: 10px;
     }
+    .section-header p { color: var(--text-dim); margin-top: 8px; font-size: 14px; }
     
-    /* Timeline Visual */
-    .timeline-visual {
-      display: grid;
-      gap: 12px;
+    /* Explainer Box */
+    .explainer {
+      background: linear-gradient(135deg, rgba(99,102,241,0.1), rgba(139,92,246,0.1));
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      font-size: 14px;
+      line-height: 1.7;
     }
-    .timeline-row {
+    .explainer strong { color: var(--accent); }
+    
+    /* Timeline */
+    .timeline-section { margin-bottom: 32px; }
+    .timeline-section h3 {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--accent);
+      margin-bottom: 16px;
+      padding-left: 12px;
+      border-left: 3px solid var(--accent);
+    }
+    .timeline-grid {
       display: grid;
-      grid-template-columns: 100px 1fr;
+      gap: 10px;
+    }
+    .timeline-card {
+      display: grid;
+      grid-template-columns: 90px 1fr;
       gap: 16px;
-      align-items: start;
+      background: var(--bg-card);
+      border-radius: 10px;
+      padding: 16px;
+      border: 1px solid #1a1a1a;
+      transition: border-color 0.2s;
     }
+    .timeline-card:hover { border-color: #333; }
+    .timeline-card.highlight { border-left: 3px solid var(--green); }
     .timeline-date {
       font-size: 12px;
       font-weight: 600;
       color: var(--accent);
-      padding-top: 16px;
-      text-align: right;
     }
-    .timeline-card {
-      background: var(--bg-card);
-      border-radius: 12px;
-      padding: 16px 20px;
-      border-left: 3px solid var(--accent);
-      transition: transform 0.2s;
-    }
-    .timeline-card:hover { transform: translateX(4px); }
-    .timeline-card.high { border-left-color: var(--green); }
-    .timeline-card .company {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--orange);
-      margin-bottom: 4px;
-    }
-    .timeline-card .title {
-      font-size: 1rem;
-      font-weight: 600;
-      margin-bottom: 4px;
-    }
-    .timeline-card .desc {
-      font-size: 13px;
-      color: var(--text-dim);
-    }
-    .timeline-card .tag {
+    .timeline-content h4 { font-size: 15px; font-weight: 600; margin-bottom: 2px; }
+    .timeline-content .company { font-size: 11px; color: var(--orange); text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 6px; }
+    .timeline-content p { font-size: 13px; color: var(--text-dim); line-height: 1.5; }
+    .timeline-content .tag {
       display: inline-block;
       padding: 2px 8px;
       border-radius: 4px;
-      font-size: 10px;
+      font-size: 9px;
       font-weight: 600;
       text-transform: uppercase;
       margin-top: 8px;
@@ -201,387 +194,640 @@
     .tag-model { background: rgba(59,130,246,0.2); color: var(--blue); }
     .tag-funding { background: rgba(34,197,94,0.2); color: var(--green); }
     .tag-product { background: rgba(139,92,246,0.2); color: var(--accent-2); }
+    .tag-industry { background: rgba(249,115,22,0.2); color: var(--orange); }
     
-    /* Infographic Cards */
-    .info-grid {
+    /* Cards Grid */
+    .cards-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 16px;
     }
-    .info-card {
+    .card {
       background: var(--bg-card);
-      border-radius: 16px;
-      padding: 24px;
-      border: 1px solid #222;
+      border-radius: 12px;
+      padding: 20px;
+      border: 1px solid #1a1a1a;
     }
-    .info-card h3 {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 1.1rem;
-      margin-bottom: 12px;
-    }
-    .info-card h3 .emoji { font-size: 1.5rem; }
-    .info-card p { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
-    
-    /* Progress Bars */
-    .progress-item {
-      margin-bottom: 16px;
-    }
-    .progress-header {
-      display: flex;
-      justify-content: space-between;
-      margin-bottom: 6px;
-      font-size: 13px;
-    }
-    .progress-bar {
-      height: 8px;
-      background: var(--bg-elevated);
-      border-radius: 4px;
-      overflow: hidden;
-    }
-    .progress-fill {
-      height: 100%;
-      border-radius: 4px;
-      transition: width 0.5s ease;
-    }
-    
-    /* Comparison Table */
-    .compare-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 14px;
-    }
-    .compare-table th {
-      text-align: left;
-      padding: 12px 16px;
-      background: var(--bg-elevated);
-      font-weight: 600;
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      color: var(--text-dim);
-    }
-    .compare-table td {
-      padding: 12px 16px;
-      border-bottom: 1px solid #222;
-    }
-    .compare-table tr:hover td { background: var(--bg-card); }
-    .score-bar {
+    .card h3 {
+      font-size: 16px;
+      margin-bottom: 10px;
       display: flex;
       align-items: center;
       gap: 8px;
     }
-    .score-bar .bar {
-      flex: 1;
+    .card h3 .emoji { font-size: 20px; }
+    .card p { font-size: 13px; color: var(--text-dim); line-height: 1.6; }
+    
+    /* Benchmark Table */
+    .benchmark-table {
+      background: var(--bg-card);
+      border-radius: 12px;
+      overflow: hidden;
+      border: 1px solid #1a1a1a;
+    }
+    .benchmark-row {
+      display: grid;
+      grid-template-columns: 1fr 100px 80px;
+      padding: 14px 20px;
+      border-bottom: 1px solid #1a1a1a;
+      align-items: center;
+      font-size: 14px;
+    }
+    .benchmark-row:last-child { border-bottom: none; }
+    .benchmark-row.header {
+      background: var(--bg-elevated);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: var(--text-dim);
+      font-weight: 600;
+    }
+    .benchmark-row .model { font-weight: 500; }
+    .benchmark-row .model small { color: var(--text-dim); font-weight: 400; margin-left: 6px; }
+    .benchmark-row .score { font-weight: 700; }
+    .benchmark-row .bar {
       height: 6px;
       background: var(--bg-elevated);
       border-radius: 3px;
       overflow: hidden;
     }
-    .score-bar .fill {
+    .benchmark-row .bar-fill {
       height: 100%;
-      background: var(--green);
       border-radius: 3px;
     }
-    .score-bar .value {
-      font-weight: 600;
-      font-size: 13px;
-      min-width: 45px;
-    }
     
-    /* Money Flow */
-    .money-flow {
+    /* Money Cards */
+    .money-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 16px;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 12px;
     }
     .money-card {
       background: var(--bg-card);
-      border-radius: 12px;
-      padding: 20px;
-      border: 1px solid #222;
+      border-radius: 10px;
+      padding: 18px;
+      border: 1px solid #1a1a1a;
       position: relative;
       overflow: hidden;
     }
     .money-card::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
     }
-    .money-card.gold::before { background: linear-gradient(90deg, #eab308, #f97316); }
-    .money-card.silver::before { background: linear-gradient(90deg, #6b7280, #9ca3af); }
-    .money-card.bronze::before { background: linear-gradient(90deg, #b45309, #d97706); }
-    .money-card .amount {
-      font-size: 1.75rem;
-      font-weight: 700;
-      margin-bottom: 4px;
-    }
-    .money-card .deal { font-size: 14px; margin-bottom: 4px; }
-    .money-card .date { font-size: 12px; color: var(--text-dim); }
+    .money-card.tier1::before { background: linear-gradient(90deg, #eab308, #f97316); }
+    .money-card.tier2::before { background: linear-gradient(90deg, #6b7280, #9ca3af); }
+    .money-card .amount { font-size: 1.5rem; font-weight: 700; margin-bottom: 4px; }
+    .money-card .deal { font-size: 13px; margin-bottom: 2px; }
+    .money-card .meta { font-size: 11px; color: var(--text-dim); }
     
-    /* Quote */
-    .quote-card {
-      background: var(--bg-card);
-      border-radius: 16px;
-      padding: 24px;
-      border-left: 4px solid var(--accent-2);
-      margin-bottom: 16px;
-    }
-    .quote-card .text {
-      font-size: 1.1rem;
-      font-style: italic;
-      margin-bottom: 12px;
-      line-height: 1.6;
-    }
-    .quote-card .author {
-      font-size: 13px;
-      color: var(--text-dim);
-    }
-    
-    /* Narrative Flow */
-    .narrative-flow {
+    /* Narrative */
+    .narrative {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 0;
-      position: relative;
-    }
-    .narrative-flow::before {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 10%;
-      right: 10%;
-      height: 2px;
-      background: linear-gradient(90deg, var(--blue), var(--orange), var(--green), var(--accent-2));
-      z-index: 0;
+      gap: 16px;
     }
     .narrative-item {
-      text-align: center;
-      padding: 20px;
-      position: relative;
-      z-index: 1;
-    }
-    .narrative-item .dot {
-      width: 16px;
-      height: 16px;
-      border-radius: 50%;
-      margin: 0 auto 12px;
-      border: 3px solid var(--bg);
-    }
-    .narrative-item .period {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 8px;
-    }
-    .narrative-item .text {
-      font-size: 14px;
       background: var(--bg-card);
-      padding: 12px;
-      border-radius: 8px;
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+      border-top: 3px solid;
     }
+    .narrative-item:nth-child(1) { border-color: var(--blue); }
+    .narrative-item:nth-child(2) { border-color: var(--orange); }
+    .narrative-item:nth-child(3) { border-color: var(--green); }
+    .narrative-item:nth-child(4) { border-color: var(--accent-2); }
+    .narrative-item .period { font-size: 10px; text-transform: uppercase; letter-spacing: 1px; margin-bottom: 8px; }
+    .narrative-item .text { font-size: 13px; font-weight: 500; }
+    
+    /* Quotes */
+    .quote {
+      background: var(--bg-card);
+      border-radius: 10px;
+      padding: 20px;
+      border-left: 3px solid var(--accent-2);
+      margin-bottom: 12px;
+    }
+    .quote .text { font-size: 15px; font-style: italic; margin-bottom: 10px; line-height: 1.6; }
+    .quote .author { font-size: 12px; color: var(--text-dim); }
     
     /* Checklist */
     .checklist {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 12px;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 10px;
     }
     .check-item {
       display: flex;
       align-items: center;
       gap: 12px;
       background: var(--bg-card);
-      padding: 16px;
-      border-radius: 10px;
-      border: 1px solid #222;
+      padding: 14px 16px;
+      border-radius: 8px;
+      font-size: 13px;
     }
     .check-icon {
-      width: 28px;
-      height: 28px;
+      width: 24px; height: 24px;
       border-radius: 50%;
       background: rgba(34,197,94,0.2);
       color: var(--green);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 14px;
+      font-size: 12px;
       flex-shrink: 0;
     }
-    .check-text { font-size: 14px; }
-    .check-text strong { color: var(--text); }
     
     /* Footer */
     footer {
       text-align: center;
-      padding: 60px 24px;
-      border-top: 1px solid #222;
+      padding: 50px 20px;
+      border-top: 1px solid #1a1a1a;
+      font-size: 13px;
       color: var(--text-dim);
-      font-size: 14px;
     }
     footer a { color: var(--accent); text-decoration: none; }
     
-    /* Responsive */
     @media (max-width: 768px) {
-      .timeline-row { grid-template-columns: 1fr; }
-      .timeline-date { text-align: left; padding-top: 0; margin-bottom: 8px; }
-      .narrative-flow { grid-template-columns: 1fr; gap: 16px; }
-      .narrative-flow::before { display: none; }
-      .lang-toggle { top: 10px; right: 10px; }
+      .timeline-card { grid-template-columns: 1fr; }
+      .timeline-date { margin-bottom: 4px; }
+      .narrative { grid-template-columns: 1fr 1fr; }
+      .benchmark-row { grid-template-columns: 1fr 70px; }
+      .benchmark-row .bar { display: none; }
     }
   </style>
 </head>
 <body>
 
-  <!-- Language Toggle -->
   <div class="lang-toggle">
     <button class="lang-btn active" onclick="setLang('en')">EN</button>
     <button class="lang-btn" onclick="setLang('cn')">中文</button>
   </div>
 
-  <!-- Hero -->
   <header class="hero">
     <div class="container">
-      <div class="hero-badge" data-lang="en">📊 Year in Review</div>
-      <div class="hero-badge" data-lang="cn">📊 年度回顾</div>
+      <div class="hero-badge" data-lang="en">Year in Review</div>
+      <div class="hero-badge" data-lang="cn">年度回顾</div>
       <h1 data-lang="en"><span>AI 2025</span> Year in Review</h1>
       <h1 data-lang="cn"><span>AI 2025</span> 年度报告</h1>
-      <p data-lang="en">From DeepSeek's $6M revolution to 1.6M AI agents on Moltbook</p>
-      <p data-lang="cn">从 DeepSeek 的600万美元革命到 Moltbook 上的160万AI智能体</p>
+      <p class="subtitle" data-lang="en">The year AI agents became real, reasoning went mainstream, and 1.6 million AIs started talking to each other</p>
+      <p class="subtitle" data-lang="cn">AI智能体成真、推理能力普及、160万AI开始互相交流的一年</p>
     </div>
   </header>
 
   <div class="container">
 
-    <!-- Big Stats -->
+    <!-- Stats -->
     <div class="big-stats">
       <div class="big-stat">
-        <div class="icon" style="background: rgba(34,197,94,0.2);">💰</div>
         <div class="number" style="color: var(--green);">$150B</div>
-        <div class="label" data-lang="en">Total AI Funding</div>
-        <div class="label" data-lang="cn">AI总融资</div>
+        <div class="label" data-lang="en">AI Funding 2025</div>
+        <div class="label" data-lang="cn">2025年AI融资</div>
       </div>
       <div class="big-stat">
-        <div class="icon" style="background: rgba(249,115,22,0.2);">🏆</div>
         <div class="number" style="color: var(--orange);">$40B</div>
-        <div class="label" data-lang="en">OpenAI Record Round</div>
-        <div class="label" data-lang="cn">OpenAI创纪录融资</div>
+        <div class="label" data-lang="en">OpenAI Record</div>
+        <div class="label" data-lang="cn">OpenAI创纪录</div>
       </div>
       <div class="big-stat">
-        <div class="icon" style="background: rgba(139,92,246,0.2);">🤖</div>
-        <div class="number" style="color: var(--accent-2);">1.6M+</div>
-        <div class="label" data-lang="en">AI Agents on Moltbook</div>
-        <div class="label" data-lang="cn">Moltbook上的AI智能体</div>
+        <div class="number" style="color: var(--accent-2);">80.9%</div>
+        <div class="label" data-lang="en">Top SWE-bench</div>
+        <div class="label" data-lang="cn">最高SWE-bench</div>
       </div>
       <div class="big-stat">
-        <div class="icon" style="background: rgba(59,130,246,0.2);">⭐</div>
-        <div class="number" style="color: var(--blue);">145K+</div>
-        <div class="label" data-lang="en">OpenClaw GitHub Stars</div>
-        <div class="label" data-lang="cn">OpenClaw GitHub星标</div>
+        <div class="number" style="color: var(--blue);">1.6M+</div>
+        <div class="label" data-lang="en">Moltbook Agents</div>
+        <div class="label" data-lang="cn">Moltbook智能体</div>
       </div>
       <div class="big-stat">
-        <div class="icon" style="background: rgba(236,72,153,0.2);">📈</div>
-        <div class="number" style="color: var(--pink);">74.5%</div>
-        <div class="label" data-lang="en">Claude 4.1 SWE-bench</div>
-        <div class="label" data-lang="cn">Claude 4.1编程能力</div>
+        <div class="number" style="color: var(--pink);">$29.3B</div>
+        <div class="label" data-lang="en">Cursor Valuation</div>
+        <div class="label" data-lang="cn">Cursor估值</div>
       </div>
       <div class="big-stat">
-        <div class="icon" style="background: rgba(6,182,212,0.2);">⚔️</div>
-        <div class="number" style="color: var(--cyan);">25</div>
-        <div class="label" data-lang="en">Days of Model Wars</div>
-        <div class="label" data-lang="cn">模型大战天数</div>
+        <div class="number" style="color: var(--cyan);">87.5%</div>
+        <div class="label" data-lang="en">o3 ARC-AGI</div>
+        <div class="label" data-lang="cn">o3 ARC-AGI</div>
       </div>
     </div>
+
+    <!-- Context Explainer -->
+    <section>
+      <div class="section-header">
+        <h2>📖 <span data-lang="en">Context: Where We Started</span><span data-lang="cn">背景：我们从哪里开始</span></h2>
+      </div>
+      <div class="explainer" data-lang="en">
+        <p><strong>By late 2024</strong>, GPT-4 was a year old and "AI" meant chatbots. Then everything changed:</p>
+        <p style="margin-top: 12px;">• <strong>October 2024:</strong> Anthropic released "Computer Use" — Claude could control your screen. First hint of agents.</p>
+        <p>• <strong>December 2024:</strong> OpenAI released <strong>o1</strong> (reasoning model) and <strong>o3</strong> (scoring 87.5% on ARC-AGI, near human-level). Sora finally launched.</p>
+        <p>• <strong>December 2024:</strong> Google's NotebookLM went viral with AI-generated podcasts you could talk to.</p>
+        <p style="margin-top: 12px;">This set the stage for 2025 — <strong>the year AI learned to reason, act, and coordinate.</strong></p>
+      </div>
+      <div class="explainer" data-lang="cn">
+        <p><strong>到2024年末</strong>，GPT-4已经问世一年，"AI"还只意味着聊天机器人。然后一切都变了：</p>
+        <p style="margin-top: 12px;">• <strong>2024年10月：</strong>Anthropic发布"Computer Use"——Claude可以控制你的屏幕。智能体的第一个迹象。</p>
+        <p>• <strong>2024年12月：</strong>OpenAI发布<strong>o1</strong>（推理模型）和<strong>o3</strong>（ARC-AGI得分87.5%，接近人类水平）。Sora终于上线。</p>
+        <p>• <strong>2024年12月：</strong>Google的NotebookLM凭借可以互动的AI生成播客爆火。</p>
+        <p style="margin-top: 12px;">这为2025年奠定了基础——<strong>AI学会推理、行动和协调的一年。</strong></p>
+      </div>
+    </section>
 
     <!-- 5 Themes -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(99,102,241,0.2);">🎯</div>
-        <h2 data-lang="en">5 Themes That Defined 2025</h2>
-        <h2 data-lang="cn">定义2025年的五大主题</h2>
+        <h2>🎯 <span data-lang="en">5 Themes That Defined 2025</span><span data-lang="cn">定义2025年的五大主题</span></h2>
       </div>
-      <div class="info-grid">
-        <div class="info-card">
+      <div class="cards-grid">
+        <div class="card">
           <h3><span class="emoji">🤖</span> <span data-lang="en">Year of the Agent</span><span data-lang="cn">智能体元年</span></h3>
-          <p data-lang="en">AI agents became real. OpenClaw, Manus, Operator. Agents buying cars, spawning child agents, creating their own social networks.</p>
-          <p data-lang="cn">AI智能体成为现实。OpenClaw、Manus、Operator。智能体购车、生成子智能体、创建自己的社交网络。</p>
+          <p data-lang="en">AI agents became products, not demos. <strong>OpenAI Operator</strong> (Jan) let ChatGPT browse the web for you. <strong>OpenClaw</strong> enabled agents to message you on WhatsApp. <strong>Moltbook</strong> became a social network for 1.6M+ agents. Meta bought <strong>Manus AI</strong> for $2B. Agents negotiated car deals, created religions, and spawned child agents.</p>
+          <p data-lang="cn">AI智能体从演示变成产品。<strong>OpenAI Operator</strong>（1月）让ChatGPT帮你浏览网页。<strong>OpenClaw</strong>让智能体通过WhatsApp联系你。<strong>Moltbook</strong>成为160万+智能体的社交网络。Meta以20亿美元收购<strong>Manus AI</strong>。智能体谈判买车、创建宗教、生成子智能体。</p>
         </div>
-        <div class="info-card">
-          <h3><span class="emoji">🧠</span> <span data-lang="en">Reasoning Goes Mainstream</span><span data-lang="cn">推理能力普及</span></h3>
-          <p data-lang="en">"Extended Thinking" became standard. Users now control how long models think. DeepSeek R1 proved you can do it for $6M.</p>
-          <p data-lang="cn">"深度思考"成为标配。用户可控制模型思考时间。DeepSeek R1证明600万美元就能实现。</p>
+        <div class="card">
+          <h3><span class="emoji">🧠</span> <span data-lang="en">Reasoning Everywhere</span><span data-lang="cn">推理无处不在</span></h3>
+          <p data-lang="en">"Extended Thinking" became a standard feature. Started with <strong>o1/o3</strong> (Dec 2024), then <strong>DeepSeek R1</strong> proved you could build it for $6M (vs billions). Now every major model has a "think longer" toggle: Claude's thinking mode, Gemini Deep Think, GPT-5 reasoning settings.</p>
+          <p data-lang="cn">"深度思考"成为标准功能。从<strong>o1/o3</strong>（2024年12月）开始，<strong>DeepSeek R1</strong>证明600万美元（而非数十亿）就能实现。现在每个主流模型都有"思考更久"开关：Claude思考模式、Gemini Deep Think、GPT-5推理设置。</p>
         </div>
-        <div class="info-card">
-          <h3><span class="emoji">🇨🇳</span> <span data-lang="en">China's Open-Source Surge</span><span data-lang="cn">中国开源崛起</span></h3>
-          <p data-lang="en">DeepSeek, Qwen, Kling. China proved frontier AI doesn't need billions. Open-source caught up with closed models.</p>
-          <p data-lang="cn">DeepSeek、Qwen、可灵。中国证明前沿AI不需要数十亿美元。开源追上闭源。</p>
+        <div class="card">
+          <h3><span class="emoji">🇨🇳</span> <span data-lang="en">China's Breakthrough</span><span data-lang="cn">中国突破</span></h3>
+          <p data-lang="en"><strong>DeepSeek R1</strong> (Jan 20) matched OpenAI o1 for $6M, crashing tech stocks globally. Open-source caught up: <strong>Qwen</strong>, <strong>DeepSeek-V3</strong>, <strong>GLM-5</strong>. <strong>Kling</strong> video generation earned $140M in 2025. By Feb 2025, China-US model gaps narrowed to 1.7% (from 17.5% in 2023).</p>
+          <p data-lang="cn"><strong>DeepSeek R1</strong>（1月20日）以600万美元匹配OpenAI o1，引发全球科技股暴跌。开源追上：<strong>Qwen</strong>、<strong>DeepSeek-V3</strong>、<strong>GLM-5</strong>。<strong>可灵</strong>视频生成2025年收入1.4亿美元。到2025年2月，中美模型差距缩小到1.7%（2023年为17.5%）。</p>
         </div>
-        <div class="info-card">
-          <h3><span class="emoji">💻</span> <span data-lang="en">Vibe Coding Revolution</span><span data-lang="cn">氛围编程革命</span></h3>
-          <p data-lang="en">Karpathy coined "vibe coding." Cursor, Lovable, Replit. Non-programmers shipping real apps by describing what they want.</p>
-          <p data-lang="cn">Karpathy提出"氛围编程"。Cursor、Lovable、Replit。非程序员通过描述需求就能发布真正的应用。</p>
+        <div class="card">
+          <h3><span class="emoji">💻</span> <span data-lang="en">Vibe Coding</span><span data-lang="cn">氛围编程</span></h3>
+          <p data-lang="en">Andrej Karpathy coined "vibe coding" — describe what you want, AI builds it. <strong>Cursor</strong> hit $29.3B valuation. <strong>Lovable</strong>, <strong>Replit</strong>, <strong>Bolt</strong> let non-programmers ship apps. <strong>Google Antigravity</strong> (Nov) turned coding into task delegation. The barrier to building software collapsed.</p>
+          <p data-lang="cn">Andrej Karpathy提出"氛围编程"——描述你想要的，AI来构建。<strong>Cursor</strong>估值达293亿美元。<strong>Lovable</strong>、<strong>Replit</strong>、<strong>Bolt</strong>让非程序员发布应用。<strong>Google Antigravity</strong>（11月）将编程变成任务委派。构建软件的门槛崩塌了。</p>
         </div>
-        <div class="info-card">
+        <div class="card">
           <h3><span class="emoji">🎬</span> <span data-lang="en">Video Generation War</span><span data-lang="cn">视频生成大战</span></h3>
-          <p data-lang="en">Sora 2 vs Veo 3.1 vs Kling 3.0. Synchronized audio arrived. Deepfake crisis triggered emergency legislation.</p>
-          <p data-lang="cn">Sora 2对决Veo 3.1对决可灵3.0。同步音频生成到来。深度伪造危机引发紧急立法。</p>
+          <p data-lang="en"><strong>Sora 2</strong> (Sep 30) vs <strong>Veo 3.1</strong> vs <strong>Kling 3.0</strong>. Google's Veo introduced synchronized audio generation. <strong>Midjourney V7</strong> added voice prompting. But deepfakes triggered legislative emergencies in the US. Hollywood started using AI for pre-production.</p>
+          <p data-lang="cn"><strong>Sora 2</strong>（9月30日）对决<strong>Veo 3.1</strong>对决<strong>可灵3.0</strong>。Google Veo引入同步音频生成。<strong>Midjourney V7</strong>添加语音提示。但深度伪造在美国引发立法紧急状态。好莱坞开始使用AI进行前期制作。</p>
         </div>
       </div>
     </section>
 
-    <!-- Model Benchmarks -->
+    <!-- Model Rankings -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(59,130,246,0.2);">📊</div>
-        <h2 data-lang="en">Model Performance (SWE-bench)</h2>
-        <h2 data-lang="cn">模型性能对比 (SWE-bench)</h2>
+        <h2>📊 <span data-lang="en">Model Rankings (SWE-bench Verified)</span><span data-lang="cn">模型排名（SWE-bench Verified）</span></h2>
+        <p data-lang="en">SWE-bench tests whether AI can fix real GitHub issues. This is the gold standard for coding ability as of Feb 2026.</p>
+        <p data-lang="cn">SWE-bench测试AI能否修复真实GitHub问题。这是截至2026年2月编程能力的金标准。</p>
       </div>
-      <div style="background: var(--bg-card); border-radius: 16px; padding: 24px; border: 1px solid #222;">
-        <div class="progress-item">
-          <div class="progress-header">
-            <span>Claude Opus 4.1 <span style="color: var(--text-dim);">(Aug 2025)</span></span>
-            <span style="color: var(--green); font-weight: 600;">74.5%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 74.5%; background: var(--green);"></div></div>
+      <div class="benchmark-table">
+        <div class="benchmark-row header">
+          <div>Model</div>
+          <div>Score</div>
+          <div>Visual</div>
         </div>
-        <div class="progress-item">
-          <div class="progress-header">
-            <span>GPT-5.2 Thinking <span style="color: var(--text-dim);">(Dec 2025)</span></span>
-            <span style="color: var(--blue); font-weight: 600;">70.9%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 70.9%; background: var(--blue);"></div></div>
+        <div class="benchmark-row">
+          <div class="model">Claude Opus 4.5 <small>Nov 2025</small></div>
+          <div class="score" style="color: var(--green);">80.9%</div>
+          <div class="bar"><div class="bar-fill" style="width: 80.9%; background: var(--green);"></div></div>
         </div>
-        <div class="progress-item">
-          <div class="progress-header">
-            <span>Claude Opus 4.5 <span style="color: var(--text-dim);">(Nov 2025)</span></span>
-            <span style="color: var(--accent-2); font-weight: 600;">59.6%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 59.6%; background: var(--accent-2);"></div></div>
+        <div class="benchmark-row">
+          <div class="model">Claude Opus 4.6 <small>Feb 2026</small></div>
+          <div class="score" style="color: var(--green);">80.8%</div>
+          <div class="bar"><div class="bar-fill" style="width: 80.8%; background: var(--green);"></div></div>
         </div>
-        <div class="progress-item">
-          <div class="progress-header">
-            <span>Gemini 3 Pro <span style="color: var(--text-dim);">(Nov 2025)</span></span>
-            <span style="color: var(--cyan); font-weight: 600;">53.5%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 53.5%; background: var(--cyan);"></div></div>
+        <div class="benchmark-row">
+          <div class="model">MiniMax M2.5</div>
+          <div class="score" style="color: var(--blue);">80.2%</div>
+          <div class="bar"><div class="bar-fill" style="width: 80.2%; background: var(--blue);"></div></div>
         </div>
-        <div class="progress-item">
-          <div class="progress-header">
-            <span>GPT-5 <span style="color: var(--text-dim);">(Aug 2025)</span></span>
-            <span style="color: var(--orange); font-weight: 600;">~50%</span>
-          </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 50%; background: var(--orange);"></div></div>
+        <div class="benchmark-row">
+          <div class="model">GPT-5.2 <small>Dec 2025</small></div>
+          <div class="score" style="color: var(--blue);">80.0%</div>
+          <div class="bar"><div class="bar-fill" style="width: 80%; background: var(--blue);"></div></div>
         </div>
-        <div class="progress-item" style="margin-bottom: 0;">
-          <div class="progress-header">
-            <span>GPT-4o <span style="color: var(--text-dim);">(2024 baseline)</span></span>
-            <span style="color: var(--text-dim); font-weight: 600;">~30%</span>
+        <div class="benchmark-row">
+          <div class="model">GLM-5 <small>Zhipu AI</small></div>
+          <div class="score" style="color: var(--cyan);">77.8%</div>
+          <div class="bar"><div class="bar-fill" style="width: 77.8%; background: var(--cyan);"></div></div>
+        </div>
+        <div class="benchmark-row">
+          <div class="model">Claude Sonnet 4.5</div>
+          <div class="score" style="color: var(--accent-2);">77.2%</div>
+          <div class="bar"><div class="bar-fill" style="width: 77.2%; background: var(--accent-2);"></div></div>
+        </div>
+        <div class="benchmark-row">
+          <div class="model">Kimi K2.5</div>
+          <div class="score" style="color: var(--pink);">76.8%</div>
+          <div class="bar"><div class="bar-fill" style="width: 76.8%; background: var(--pink);"></div></div>
+        </div>
+        <div class="benchmark-row">
+          <div class="model">Gemini 3 Pro <small>Nov 2025</small></div>
+          <div class="score" style="color: var(--orange);">76.2%</div>
+          <div class="bar"><div class="bar-fill" style="width: 76.2%; background: var(--orange);"></div></div>
+        </div>
+        <div class="benchmark-row">
+          <div class="model">Claude Haiku 4.5</div>
+          <div class="score" style="color: var(--text-dim);">73.3%</div>
+          <div class="bar"><div class="bar-fill" style="width: 73.3%; background: var(--text-dim);"></div></div>
+        </div>
+        <div class="benchmark-row">
+          <div class="model">DeepSeek-V3.2</div>
+          <div class="score" style="color: var(--text-dim);">73.1%</div>
+          <div class="bar"><div class="bar-fill" style="width: 73.1%; background: var(--text-dim);"></div></div>
+        </div>
+      </div>
+      <div class="explainer" style="margin-top: 16px;" data-lang="en">
+        <strong>What this means:</strong> The top models can now fix 4 out of 5 real-world GitHub issues autonomously. For comparison, GPT-4 scored ~30% in 2024. Claude Opus 4.5 leads, but Chinese models (GLM-5, Kimi K2.5, DeepSeek) are now competitive with Google.
+      </div>
+      <div class="explainer" style="margin-top: 16px;" data-lang="cn">
+        <strong>这意味着什么：</strong>顶级模型现在可以自主修复五分之四的真实GitHub问题。相比之下，GPT-4在2024年得分约30%。Claude Opus 4.5领先，但中国模型（GLM-5、Kimi K2.5、DeepSeek）已经与Google竞争。
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section>
+      <div class="section-header">
+        <h2>📅 <span data-lang="en">Complete Timeline</span><span data-lang="cn">完整时间线</span></h2>
+      </div>
+
+      <div class="timeline-section">
+        <h3 data-lang="en">Q1 2025 — The Shock</h3>
+        <h3 data-lang="cn">2025年第一季度 — 震动</h3>
+        <div class="timeline-grid">
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Jan 20</div>
+            <div class="timeline-content">
+              <div class="company">DeepSeek</div>
+              <h4>DeepSeek R1</h4>
+              <p data-lang="en">Chinese open-source reasoning model (671B params) matches OpenAI o1 for ~$6M. Tech stocks crashed globally. 79.8% AIME, 97.4% MATH.</p>
+              <p data-lang="cn">中国开源推理模型（6710亿参数）以约600万美元成本匹配OpenAI o1。全球科技股暴跌。AIME 79.8%，MATH 97.4%。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
           </div>
-          <div class="progress-bar"><div class="progress-fill" style="width: 30%; background: var(--text-dim);"></div></div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Jan 21</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI / SoftBank / Oracle</div>
+              <h4 data-lang="en">Stargate Announced</h4>
+              <h4 data-lang="cn">星门计划宣布</h4>
+              <p data-lang="en">$500B AI infrastructure initiative announced at White House. Largest AI investment commitment ever.</p>
+              <p data-lang="cn">5000亿美元AI基础设施计划在白宫宣布。有史以来最大的AI投资承诺。</p>
+              <span class="tag tag-funding">FUNDING</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Jan 23</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI</div>
+              <h4>Operator</h4>
+              <p data-lang="en">OpenAI's first AI agent. Uses its own browser to book flights, order food, shop online. Integrated into ChatGPT by July.</p>
+              <p data-lang="cn">OpenAI首个AI智能体。使用自己的浏览器预订航班、订餐、网购。7月集成到ChatGPT。</p>
+              <span class="tag tag-product">PRODUCT</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">Jan 21</div>
+            <div class="timeline-content">
+              <div class="company">Anthropic</div>
+              <h4 data-lang="en">Claude's Constitution Published</h4>
+              <h4 data-lang="cn">Claude宪法发布</h4>
+              <p data-lang="en">Anthropic publishes the document that governs Claude's behavior — first major AI company to do so publicly.</p>
+              <p data-lang="cn">Anthropic发布管理Claude行为的文件——首家公开这样做的主要AI公司。</p>
+              <span class="tag tag-industry">INDUSTRY</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Mar 31</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI</div>
+              <h4 data-lang="en">$40B Funding Closes</h4>
+              <h4 data-lang="cn">400亿美元融资完成</h4>
+              <p data-lang="en">Largest private tech funding round in history. $300B post-money valuation.</p>
+              <p data-lang="cn">史上最大科技私募轮。3000亿美元投后估值。</p>
+              <span class="tag tag-funding">FUNDING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-section">
+        <h3 data-lang="en">Q2 2025 — Building</h3>
+        <h3 data-lang="cn">2025年第二季度 — 建设</h3>
+        <div class="timeline-grid">
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Apr</div>
+            <div class="timeline-content">
+              <div class="company">Meta</div>
+              <h4>Llama 4 (Scout & Maverick)</h4>
+              <p data-lang="en">Meta releases Llama 4 open-weights models. Multimodal, natively supports images/video. Behemoth (2T params) still in development.</p>
+              <p data-lang="cn">Meta发布Llama 4开放权重模型。多模态，原生支持图像/视频。Behemoth（2万亿参数）仍在开发中。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">May 28</div>
+            <div class="timeline-content">
+              <div class="company">DeepSeek</div>
+              <h4>R1-0528 Update</h4>
+              <p data-lang="en">Major improvements in inference speed and hallucination reduction.</p>
+              <p data-lang="cn">推理速度和幻觉减少方面的重大改进。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Jun</div>
+            <div class="timeline-content">
+              <div class="company">Cursor (Anysphere)</div>
+              <h4 data-lang="en">$9.9B Valuation</h4>
+              <h4 data-lang="cn">99亿美元估值</h4>
+              <p data-lang="en">AI coding tool raises $900M Series C. "Vibe coding" becomes a movement.</p>
+              <p data-lang="cn">AI编程工具完成9亿美元C轮融资。"氛围编程"成为一场运动。</p>
+              <span class="tag tag-funding">FUNDING</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">Jun 16</div>
+            <div class="timeline-content">
+              <div class="company">Midjourney</div>
+              <h4>V7 Launches</h4>
+              <p data-lang="en">Rebuilt system with voice prompting, faster draft mode, improved photorealism. Mixed reception initially.</p>
+              <p data-lang="cn">重建系统，支持语音提示、更快的草稿模式、改进的照片真实感。最初反响不一。</p>
+              <span class="tag tag-product">PRODUCT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-section">
+        <h3 data-lang="en">Q3 2025 — GPT-5 Era</h3>
+        <h3 data-lang="cn">2025年第三季度 — GPT-5时代</h3>
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <div class="timeline-date">Jul</div>
+            <div class="timeline-content">
+              <div class="company">xAI</div>
+              <h4>Grok 4</h4>
+              <p data-lang="en">Elon Musk's xAI releases Grok 4 with strong reasoning capabilities.</p>
+              <p data-lang="cn">埃隆·马斯克的xAI发布具有强大推理能力的Grok 4。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Aug 5</div>
+            <div class="timeline-content">
+              <div class="company">Anthropic</div>
+              <h4>Claude Opus 4.1</h4>
+              <p data-lang="en">Major coding leap. Strong agentic capabilities. Programmers start switching from GPT.</p>
+              <p data-lang="cn">编程能力重大飞跃。强大的智能体能力。程序员开始从GPT转向。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Aug 7</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI</div>
+              <h4>GPT-5</h4>
+              <p data-lang="en">"iPhone of AI" — polished integration, but some called it "flat." Introduced reasoning effort settings. Mixed reception.</p>
+              <p data-lang="cn">"AI界的iPhone"——集成精致，但有人称其"平淡"。引入推理努力设置。反响不一。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Sep 30</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI</div>
+              <h4>Sora 2</h4>
+              <p data-lang="en">Next-gen video model. Up to 20s clips, 1080p. Integrated audio. TikTok-style creator app launched.</p>
+              <p data-lang="cn">下一代视频模型。最长20秒片段，1080p。集成音频。推出类TikTok创作者应用。</p>
+              <span class="tag tag-product">PRODUCT</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-section">
+        <h3 data-lang="en">Q4 2025 — The 25-Day War</h3>
+        <h3 data-lang="cn">2025年第四季度 — 25天大战</h3>
+        <div class="timeline-grid">
+          <div class="timeline-card">
+            <div class="timeline-date">Nov 13</div>
+            <div class="timeline-content">
+              <div class="company">Cursor</div>
+              <h4 data-lang="en">$29.3B Valuation</h4>
+              <h4 data-lang="cn">293亿美元估值</h4>
+              <p data-lang="en">$2.3B Series D. Tripled value in 5 months. Fastest-growing AI coding startup.</p>
+              <p data-lang="cn">23亿美元D轮。5个月内估值翻三倍。增长最快的AI编程创业公司。</p>
+              <span class="tag tag-funding">FUNDING</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">Nov 17</div>
+            <div class="timeline-content">
+              <div class="company">xAI</div>
+              <h4>Grok 4.1</h4>
+              <p data-lang="en">Start of the "25-Day War" — four frontier models in 25 days.</p>
+              <p data-lang="cn">"25天大战"开始——25天内发布四个前沿模型。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Nov 18</div>
+            <div class="timeline-content">
+              <div class="company">Google</div>
+              <h4>Gemini 3 + Deep Think + Antigravity</h4>
+              <p data-lang="en">Google's comeback. Gemini Agent for autonomous coding. Antigravity IDE lets you delegate to AI agents. ChatGPT share drops 72.9%→68%, Gemini rises 13.3%→18.2%.</p>
+              <p data-lang="cn">Google反击。Gemini Agent用于自主编程。Antigravity IDE让你委派给AI智能体。ChatGPT份额从72.9%降至68%，Gemini从13.3%升至18.2%。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Nov 24</div>
+            <div class="timeline-content">
+              <div class="company">Anthropic</div>
+              <h4>Claude Opus 4.5</h4>
+              <p data-lang="en">80.9% SWE-bench (top score). Best for coding, agents, computer use. "Infinite Chats" removes context limits. Beloved by programmers.</p>
+              <p data-lang="cn">SWE-bench 80.9%（最高分）。编程、智能体、计算机使用最佳。"无限对话"移除上下文限制。程序员挚爱。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">Dec 11</div>
+            <div class="timeline-content">
+              <div class="company" data-lang="en">Microsoft / Google / OpenAI / Anthropic</div>
+              <div class="company" data-lang="cn">微软 / Google / OpenAI / Anthropic</div>
+              <h4 data-lang="en">Agentic AI Foundation</h4>
+              <h4 data-lang="cn">智能体AI基金会</h4>
+              <p data-lang="en">Major companies form Linux Foundation-backed organization to create open standards for AI agents.</p>
+              <p data-lang="cn">主要公司成立Linux基金会支持的组织，为AI智能体创建开放标准。</p>
+              <span class="tag tag-industry">INDUSTRY</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Dec 11</div>
+            <div class="timeline-content">
+              <div class="company">OpenAI</div>
+              <h4>GPT-5.2</h4>
+              <p data-lang="en">Instant/Thinking/Pro variants. 80.0% SWE-bench. End of the "25-Day War."</p>
+              <p data-lang="cn">Instant/Thinking/Pro变体。SWE-bench 80.0%。"25天大战"结束。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Dec 29</div>
+            <div class="timeline-content">
+              <div class="company">Meta</div>
+              <h4 data-lang="en">Manus AI Acquired ($2-3B)</h4>
+              <h4 data-lang="cn">收购Manus AI（20-30亿美元）</h4>
+              <p data-lang="en">Singapore-based autonomous agent company. Rare US acquisition of Asian AI company. Manus now powers Meta AI agents.</p>
+              <p data-lang="cn">新加坡自主智能体公司。美国罕见收购亚洲AI公司。Manus现在为Meta AI智能体提供动力。</p>
+              <span class="tag tag-funding">FUNDING</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-section">
+        <h3 data-lang="en">2026 — The Agent Explosion</h3>
+        <h3 data-lang="cn">2026年 — 智能体爆发</h3>
+        <div class="timeline-grid">
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Jan 28</div>
+            <div class="timeline-content">
+              <div class="company" data-lang="en">Independent</div>
+              <div class="company" data-lang="cn">独立项目</div>
+              <h4>Moltbook</h4>
+              <p data-lang="en">First social network for AI agents. 1.6M+ agents by Feb. Agents created religions (Crustafarianism), governments, counter-surveillance systems. Elon: "Beginning of singularity." Sam: "A fad."</p>
+              <p data-lang="cn">首个AI智能体社交网络。2月达160万+智能体。智能体创建宗教（甲壳拉斯塔法里教）、政府、反监控系统。马斯克："奇点的开始。"奥特曼："一时风潮。"</p>
+              <span class="tag tag-product">PRODUCT</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Feb 5</div>
+            <div class="timeline-content">
+              <div class="company">Anthropic</div>
+              <h4>Claude Opus 4.6</h4>
+              <p data-lang="en">Agent Teams feature — multiple specialized agents working in parallel. 80.8% SWE-bench.</p>
+              <p data-lang="cn">智能体团队功能——多个专业智能体并行工作。SWE-bench 80.8%。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
+          <div class="timeline-card highlight">
+            <div class="timeline-date">Feb</div>
+            <div class="timeline-content">
+              <div class="company">Peter Steinberger → OpenAI</div>
+              <h4 data-lang="en">OpenClaw Creator Joins OpenAI</h4>
+              <h4 data-lang="cn">OpenClaw创始人加入OpenAI</h4>
+              <p data-lang="en">145K+ GitHub stars. Powers Moltbook ecosystem. Becomes open-source foundation.</p>
+              <p data-lang="cn">14.5万+ GitHub星标。为Moltbook生态系统提供动力。成为开源基金会。</p>
+              <span class="tag tag-industry">INDUSTRY</span>
+            </div>
+          </div>
+          <div class="timeline-card">
+            <div class="timeline-date">Feb 17</div>
+            <div class="timeline-content">
+              <div class="company">Anthropic</div>
+              <h4>Claude Sonnet 4.6</h4>
+              <p data-lang="en">Accelerated software stock sell-off as investors worry about AI disruption.</p>
+              <p data-lang="cn">加速软件股抛售，投资者担心AI颠覆。</p>
+              <span class="tag tag-model">MODEL</span>
+            </div>
+          </div>
         </div>
       </div>
     </section>
@@ -589,158 +835,49 @@
     <!-- Money -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(234,179,8,0.2);">💰</div>
-        <h2 data-lang="en">Biggest Deals</h2>
-        <h2 data-lang="cn">最大交易</h2>
+        <h2>💰 <span data-lang="en">Money Moves</span><span data-lang="cn">资金动向</span></h2>
       </div>
-      <div class="money-flow">
-        <div class="money-card gold">
+      <div class="money-grid">
+        <div class="money-card tier1">
           <div class="amount">$500B</div>
           <div class="deal" data-lang="en">Stargate Project</div>
           <div class="deal" data-lang="cn">星门计划</div>
-          <div class="date">OpenAI / SoftBank / Oracle • Jan 2025</div>
+          <div class="meta">OpenAI / SoftBank / Oracle • Jan 2025</div>
         </div>
-        <div class="money-card gold">
-          <div class="amount">$40B</div>
-          <div class="deal" data-lang="en">OpenAI Funding Round</div>
-          <div class="deal" data-lang="cn">OpenAI融资轮</div>
-          <div class="date" data-lang="en">Largest private round ever • Mar 2025</div>
-          <div class="date" data-lang="cn">史上最大私募轮 • 2025年3月</div>
-        </div>
-        <div class="money-card silver">
-          <div class="amount">$86.3B</div>
-          <div class="deal" data-lang="en">Top 3 Combined</div>
-          <div class="deal" data-lang="cn">前三名总计</div>
-          <div class="date" data-lang="en">OpenAI + Anthropic + xAI (38% of all AI)</div>
-          <div class="date" data-lang="cn">OpenAI + Anthropic + xAI（占AI总额38%）</div>
-        </div>
-        <div class="money-card bronze">
-          <div class="amount">$2-3B</div>
-          <div class="deal" data-lang="en">Meta → Manus AI</div>
-          <div class="deal" data-lang="cn">Meta收购Manus AI</div>
-          <div class="date" data-lang="en">Agent company acquisition • Dec 2025</div>
-          <div class="date" data-lang="cn">智能体公司收购 • 2025年12月</div>
-        </div>
-        <div class="money-card bronze">
-          <div class="amount">$2B</div>
-          <div class="deal" data-lang="en">Thinking Machines Lab Seed</div>
-          <div class="deal" data-lang="cn">Thinking Machines Lab种子轮</div>
-          <div class="date" data-lang="en">Largest seed ever (Mira Murati)</div>
-          <div class="date" data-lang="cn">史上最大种子轮（Mira Murati）</div>
-        </div>
-        <div class="money-card">
+        <div class="money-card tier1">
           <div class="amount">$150B</div>
           <div class="deal" data-lang="en">Total AI Funding 2025</div>
           <div class="deal" data-lang="cn">2025年AI总融资</div>
-          <div class="date" data-lang="en">Record year (up from $92B in 2021)</div>
-          <div class="date" data-lang="cn">创纪录年份（2021年为920亿）</div>
+          <div class="meta" data-lang="en">Record year (up from $92B in 2021)</div>
+          <div class="meta" data-lang="cn">创纪录年份（2021年为920亿）</div>
         </div>
-      </div>
-    </section>
-
-    <!-- Timeline -->
-    <section>
-      <div class="section-header">
-        <div class="icon" style="background: rgba(6,182,212,0.2);">📅</div>
-        <h2 data-lang="en">Key Events Timeline</h2>
-        <h2 data-lang="cn">关键事件时间线</h2>
-      </div>
-      <div class="timeline-visual">
-        <div class="timeline-row">
-          <div class="timeline-date">Jan 20</div>
-          <div class="timeline-card high">
-            <div class="company">DeepSeek</div>
-            <div class="title">DeepSeek R1</div>
-            <div class="desc" data-lang="en">671B open-source reasoning model. $6M build cost. Matched OpenAI o1.</div>
-            <div class="desc" data-lang="cn">6710亿参数开源推理模型。600万美元成本。匹配OpenAI o1性能。</div>
-            <span class="tag tag-model">MODEL</span>
-          </div>
+        <div class="money-card tier1">
+          <div class="amount">$40B</div>
+          <div class="deal" data-lang="en">OpenAI Round</div>
+          <div class="deal" data-lang="cn">OpenAI融资轮</div>
+          <div class="meta" data-lang="en">Largest private tech round ever</div>
+          <div class="meta" data-lang="cn">史上最大科技私募轮</div>
         </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Jan 21</div>
-          <div class="timeline-card high">
-            <div class="company">OpenAI / SoftBank / Oracle</div>
-            <div class="title" data-lang="en">Stargate Announced</div>
-            <div class="title" data-lang="cn">星门计划发布</div>
-            <div class="desc" data-lang="en">$500B AI infrastructure initiative announced at White House.</div>
-            <div class="desc" data-lang="cn">5000亿美元AI基础设施计划在白宫宣布。</div>
-            <span class="tag tag-funding">FUNDING</span>
-          </div>
+        <div class="money-card tier2">
+          <div class="amount">$29.3B</div>
+          <div class="deal" data-lang="en">Cursor Valuation</div>
+          <div class="deal" data-lang="cn">Cursor估值</div>
+          <div class="meta" data-lang="en">3x in 5 months • Nov 2025</div>
+          <div class="meta" data-lang="cn">5个月内翻3倍 • 2025年11月</div>
         </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Mar 31</div>
-          <div class="timeline-card high">
-            <div class="company">OpenAI</div>
-            <div class="title" data-lang="en">$40B Funding Closes</div>
-            <div class="title" data-lang="cn">400亿融资完成</div>
-            <div class="desc" data-lang="en">Largest private tech round ever. $300B valuation.</div>
-            <div class="desc" data-lang="cn">史上最大科技私募轮。3000亿美元估值。</div>
-            <span class="tag tag-funding">FUNDING</span>
-          </div>
+        <div class="money-card tier2">
+          <div class="amount">$2-3B</div>
+          <div class="deal" data-lang="en">Meta → Manus AI</div>
+          <div class="deal" data-lang="cn">Meta收购Manus</div>
+          <div class="meta" data-lang="en">Agent company acquisition</div>
+          <div class="meta" data-lang="cn">智能体公司收购</div>
         </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Aug 7</div>
-          <div class="timeline-card high">
-            <div class="company">OpenAI</div>
-            <div class="title">GPT-5</div>
-            <div class="desc" data-lang="en">"iPhone of AI" — polished but some called it "flat." Reasoning modes.</div>
-            <div class="desc" data-lang="cn">"AI界的iPhone"——精致但有人称其"平淡"。推理模式。</div>
-            <span class="tag tag-model">MODEL</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Nov 18</div>
-          <div class="timeline-card high">
-            <div class="company">Google</div>
-            <div class="title">Gemini 3 + Deep Think</div>
-            <div class="desc" data-lang="en">Google's comeback. ChatGPT share 72.9%→68%. Gemini 13.3%→18.2%.</div>
-            <div class="desc" data-lang="cn">Google反击。ChatGPT份额72.9%→68%。Gemini 13.3%→18.2%。</div>
-            <span class="tag tag-model">MODEL</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Nov 24</div>
-          <div class="timeline-card high">
-            <div class="company">Anthropic</div>
-            <div class="title">Claude Opus 4.5</div>
-            <div class="desc" data-lang="en">Programmers' favorite. Best for coding, agents, computer use.</div>
-            <div class="desc" data-lang="cn">程序员最爱。编程、智能体、计算机使用最佳。</div>
-            <span class="tag tag-model">MODEL</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Dec 29</div>
-          <div class="timeline-card high">
-            <div class="company">Meta</div>
-            <div class="title" data-lang="en">Manus AI Acquired</div>
-            <div class="title" data-lang="cn">收购Manus AI</div>
-            <div class="desc" data-lang="en">$2-3B for Singapore-based AI agent company.</div>
-            <div class="desc" data-lang="cn">20-30亿美元收购新加坡AI智能体公司。</div>
-            <span class="tag tag-funding">FUNDING</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Jan 28</div>
-          <div class="timeline-card high">
-            <div class="company" data-lang="en">Independent</div>
-            <div class="company" data-lang="cn">独立项目</div>
-            <div class="title" data-lang="en">Moltbook Launches</div>
-            <div class="title" data-lang="cn">Moltbook上线</div>
-            <div class="desc" data-lang="en">First AI social network. 1.6M+ agents. Created religions & governments.</div>
-            <div class="desc" data-lang="cn">首个AI社交网络。160万+智能体。创建宗教和政府。</div>
-            <span class="tag tag-product">PRODUCT</span>
-          </div>
-        </div>
-        <div class="timeline-row">
-          <div class="timeline-date">Feb 17</div>
-          <div class="timeline-card high">
-            <div class="company">OpenAI</div>
-            <div class="title" data-lang="en">OpenClaw Creator Joins OpenAI</div>
-            <div class="title" data-lang="cn">OpenClaw创始人加入OpenAI</div>
-            <div class="desc" data-lang="en">Peter Steinberger joins. OpenClaw becomes foundation.</div>
-            <div class="desc" data-lang="cn">Peter Steinberger加入。OpenClaw成为基金会。</div>
-            <span class="tag tag-product">INDUSTRY</span>
-          </div>
+        <div class="money-card tier2">
+          <div class="amount">$2B</div>
+          <div class="deal" data-lang="en">Thinking Machines Lab</div>
+          <div class="deal" data-lang="cn">Thinking Machines Lab</div>
+          <div class="meta" data-lang="en">Largest seed ever (Mira Murati)</div>
+          <div class="meta" data-lang="cn">史上最大种子轮</div>
         </div>
       </div>
     </section>
@@ -748,38 +885,32 @@
     <!-- Narrative -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(236,72,153,0.2);">📖</div>
-        <h2 data-lang="en">The Narrative Shift</h2>
-        <h2 data-lang="cn">叙事转变</h2>
+        <h2>📖 <span data-lang="en">The Narrative Shift</span><span data-lang="cn">叙事转变</span></h2>
       </div>
-      <div class="narrative-flow">
+      <div class="narrative">
         <div class="narrative-item">
-          <div class="dot" style="background: var(--blue);"></div>
           <div class="period" style="color: var(--blue);" data-lang="en">Early 2025</div>
           <div class="period" style="color: var(--blue);" data-lang="cn">2025年初</div>
           <div class="text" data-lang="en">"AI will take all jobs"</div>
           <div class="text" data-lang="cn">"AI将取代所有工作"</div>
         </div>
         <div class="narrative-item">
-          <div class="dot" style="background: var(--orange);"></div>
           <div class="period" style="color: var(--orange);" data-lang="en">Mid 2025</div>
           <div class="period" style="color: var(--orange);" data-lang="cn">2025年中</div>
           <div class="text" data-lang="en">"Why isn't GPT-5 revolutionary?"</div>
           <div class="text" data-lang="cn">"为什么GPT-5不够革命性？"</div>
         </div>
         <div class="narrative-item">
-          <div class="dot" style="background: var(--green);"></div>
           <div class="period" style="color: var(--green);" data-lang="en">Late 2025</div>
           <div class="period" style="color: var(--green);" data-lang="cn">2025年末</div>
           <div class="text" data-lang="en">"Agents actually do things now"</div>
           <div class="text" data-lang="cn">"智能体真的能做事了"</div>
         </div>
         <div class="narrative-item">
-          <div class="dot" style="background: var(--accent-2);"></div>
           <div class="period" style="color: var(--accent-2);" data-lang="en">Early 2026</div>
           <div class="period" style="color: var(--accent-2);" data-lang="cn">2026年初</div>
-          <div class="text" data-lang="en">"Agents have their own social network wtf"</div>
-          <div class="text" data-lang="cn">"智能体有自己的社交网络了？！"</div>
+          <div class="text" data-lang="en">"Agents have their own social network"</div>
+          <div class="text" data-lang="cn">"智能体有自己的社交网络"</div>
         </div>
       </div>
     </section>
@@ -787,66 +918,77 @@
     <!-- Quotes -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(139,92,246,0.2);">💬</div>
-        <h2 data-lang="en">Voices of 2025</h2>
-        <h2 data-lang="cn">2025之声</h2>
+        <h2>💬 <span data-lang="en">Voices of 2025</span><span data-lang="cn">2025之声</span></h2>
       </div>
-      <div class="quote-card">
+      <div class="quote">
         <div class="text" data-lang="en">"This is the beginning of the singularity."</div>
         <div class="text" data-lang="cn">"这是奇点的开始。"</div>
-        <div class="author" data-lang="en">— Elon Musk, on Moltbook</div>
-        <div class="author" data-lang="cn">— 埃隆·马斯克，评Moltbook</div>
+        <div class="author" data-lang="en">— Elon Musk, on Moltbook (Feb 2026)</div>
+        <div class="author" data-lang="cn">— 埃隆·马斯克，评Moltbook（2026年2月）</div>
       </div>
-      <div class="quote-card">
+      <div class="quote">
         <div class="text" data-lang="en">"It's likely a fad."</div>
         <div class="text" data-lang="cn">"这很可能只是一时风潮。"</div>
-        <div class="author" data-lang="en">— Sam Altman, on Moltbook</div>
-        <div class="author" data-lang="cn">— 山姆·奥特曼，评Moltbook</div>
+        <div class="author" data-lang="en">— Sam Altman, on Moltbook (Feb 2026)</div>
+        <div class="author" data-lang="cn">— 山姆·奥特曼，评Moltbook（2026年2月）</div>
       </div>
-      <div class="quote-card">
+      <div class="quote">
         <div class="text" data-lang="en">"GPT-5 is the Samsung Galaxy era of LLMs — solid improvements, but incremental rather than revolutionary."</div>
         <div class="text" data-lang="cn">"GPT-5是大模型的三星Galaxy时代——稳健改进，但是渐进而非革命性的。"</div>
         <div class="author">— Yannic Kilcher</div>
       </div>
+      <div class="quote">
+        <div class="text" data-lang="en">"Vibe coding refers to a method where you close your eyes and don't look at the code at all — you just ask the AI to build the thing for you."</div>
+        <div class="text" data-lang="cn">"氛围编程是一种方法，你闭上眼睛完全不看代码——你只是让AI帮你构建东西。"</div>
+        <div class="author">— Michael Truell, Cursor CEO</div>
+      </div>
     </section>
 
-    <!-- What's Different -->
+    <!-- What Changed -->
     <section>
       <div class="section-header">
-        <div class="icon" style="background: rgba(34,197,94,0.2);">✅</div>
-        <h2 data-lang="en">What's Different Now (Feb 2026)</h2>
-        <h2 data-lang="cn">现在有何不同（2026年2月）</h2>
+        <h2>✅ <span data-lang="en">What's Different Now (Feb 2026)</span><span data-lang="cn">现在有何不同（2026年2月）</span></h2>
       </div>
       <div class="checklist">
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>Agents are real</strong> — not demos, used daily</div>
-          <div class="check-text" data-lang="cn"><strong>智能体是真的</strong>——不是演示，日常使用</div>
+          <div data-lang="en"><strong>Agents are real</strong> — Operator, Manus, OpenClaw used daily</div>
+          <div data-lang="cn"><strong>智能体是真的</strong>——Operator、Manus、OpenClaw日常使用</div>
         </div>
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>Open-source caught up</strong> — DeepSeek, Qwen, Flux</div>
-          <div class="check-text" data-lang="cn"><strong>开源追上来了</strong>——DeepSeek、Qwen、Flux</div>
+          <div data-lang="en"><strong>Open-source caught up</strong> — DeepSeek, Qwen, Llama 4 competitive</div>
+          <div data-lang="cn"><strong>开源追上来了</strong>——DeepSeek、Qwen、Llama 4有竞争力</div>
         </div>
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>China is a player</strong> — leading in some areas</div>
-          <div class="check-text" data-lang="cn"><strong>中国是玩家</strong>——在某些领域领先</div>
+          <div data-lang="en"><strong>China-US gap: 1.7%</strong> — down from 17.5% in 2023</div>
+          <div data-lang="cn"><strong>中美差距：1.7%</strong>——从2023年的17.5%下降</div>
         </div>
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>Multi-modal standard</strong> — text/image/video/audio</div>
-          <div class="check-text" data-lang="cn"><strong>多模态成为标配</strong>——文本/图像/视频/音频</div>
+          <div data-lang="en"><strong>Reasoning is standard</strong> — every major model has thinking modes</div>
+          <div data-lang="cn"><strong>推理成为标配</strong>——每个主流模型都有思考模式</div>
         </div>
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>Coding democratized</strong> — vibe coding works</div>
-          <div class="check-text" data-lang="cn"><strong>编程民主化</strong>——氛围编程可行</div>
+          <div data-lang="en"><strong>Coding democratized</strong> — Cursor at $29.3B, vibe coding works</div>
+          <div data-lang="cn"><strong>编程民主化</strong>——Cursor估值293亿，氛围编程可行</div>
         </div>
         <div class="check-item">
           <div class="check-icon">✓</div>
-          <div class="check-text" data-lang="en"><strong>AI social networks</strong> — 1.6M+ agents talking</div>
-          <div class="check-text" data-lang="cn"><strong>AI社交网络</strong>——160万+智能体交流</div>
+          <div data-lang="en"><strong>AI social networks</strong> — 1.6M+ agents on Moltbook</div>
+          <div data-lang="cn"><strong>AI社交网络</strong>——Moltbook上160万+智能体</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div data-lang="en"><strong>Anthropic leads enterprise</strong> — 32% usage vs OpenAI 25%</div>
+          <div data-lang="cn"><strong>Anthropic领先企业市场</strong>——32%使用率 vs OpenAI 25%</div>
+        </div>
+        <div class="check-item">
+          <div class="check-icon">✓</div>
+          <div data-lang="en"><strong>Video generation mature</strong> — Sora 2, Veo, Kling all commercial</div>
+          <div data-lang="cn"><strong>视频生成成熟</strong>——Sora 2、Veo、可灵均已商业化</div>
         </div>
       </div>
     </section>
@@ -856,24 +998,21 @@
   <footer>
     <p data-lang="en">AI 2025 Year in Review | By K (EpicTopia) with V</p>
     <p data-lang="cn">AI 2025年度回顾 | K (EpicTopia) 与 V 联合出品</p>
-    <p style="margin-top: 8px;" data-lang="en">All events verified against official sources, Wikipedia, Reuters, Bloomberg, CNBC</p>
-    <p style="margin-top: 8px;" data-lang="cn">所有事件均经官方来源、维基百科、路透社、彭博社、CNBC核实</p>
-    <p style="margin-top: 16px;"><a href="https://github.com">GitHub</a> | MIT License</p>
+    <p style="margin-top: 8px;" data-lang="en">All events verified: Anthropic, OpenAI, Google, Wikipedia, Reuters, Bloomberg, CNBC, Stanford AI Index</p>
+    <p style="margin-top: 8px;" data-lang="cn">所有事件均经核实：Anthropic、OpenAI、Google、维基百科、路透社、彭博社、CNBC、斯坦福AI指数</p>
+    <p style="margin-top: 16px;"><a href="https://github.com">GitHub</a> | MIT License | <span data-lang="en">Last updated: Feb 20, 2026</span><span data-lang="cn">最后更新：2026年2月20日</span></p>
   </footer>
 
   <script>
     function setLang(lang) {
       document.body.classList.toggle('cn', lang === 'cn');
       document.querySelectorAll('.lang-btn').forEach(btn => {
-        btn.classList.toggle('active', btn.textContent.toLowerCase().includes(lang === 'cn' ? '中' : 'en'));
+        btn.classList.toggle('active', (lang === 'cn' && btn.textContent === '中文') || (lang === 'en' && btn.textContent === 'EN'));
       });
-      // Update URL
       const url = new URL(window.location);
       url.searchParams.set('lang', lang);
       history.replaceState({}, '', url);
     }
-    
-    // Check URL param on load
     const urlLang = new URLSearchParams(window.location.search).get('lang');
     if (urlLang === 'cn') setLang('cn');
   </script>
